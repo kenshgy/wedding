@@ -11,5 +11,11 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
+  },
+  server: {
+    // Permissions-Policy ヘッダーに 'interest-cohort' を追加する
+    headers: {
+      'Permissions-Policy': 'interest-cohort=()'
+    }
   }
 })
