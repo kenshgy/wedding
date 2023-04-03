@@ -10,12 +10,16 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
-    }
+    },
   },
   server: {
     // Permissions-Policy ヘッダーに 'interest-cohort' を追加する
     headers: {
       'Permissions-Policy': 'interest-cohort=()'
     }
+  },
+  base: "happy-wedding",
+  build: {
+    outDir: "../docs"
   }
 })
