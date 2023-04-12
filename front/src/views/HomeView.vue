@@ -9,24 +9,30 @@ import ScheduleCard from './ScheduleCard.vue'
 </script>
 
 <template>
-  <v-row>
-    <v-col>
-      <carousel-card />
-    </v-col>
-  </v-row>
-  <v-row>
-    <v-col>
-      <message-card />
-    </v-col>
-  </v-row>
-  <v-row>
-    <v-col>
-      <schedule-card />
-    </v-col>
-  </v-row>
-  <v-row>
-    <v-col>
-      <form-card />
-    </v-col>
-  </v-row>
+  <v-app>
+    <v-main>
+      <v-container fluid fill-height>
+        <v-row>
+          <v-col>
+            <carousel-card />
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col>
+            <message-card />
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col>
+            <schedule-card />
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col>
+            <form-card />
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-main>
+  </v-app>
 </template>

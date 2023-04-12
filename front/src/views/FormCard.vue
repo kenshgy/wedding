@@ -1,14 +1,19 @@
 <script setup lang="ts">
-import { reactive } from 'vue'
+import { reactive, ref } from 'vue'
 
-const userOption = reactive({
-  select: true
-})
+const userOption = ref(true)
 const input = reactive({
-  SirName: '',
+  FamilyName: '',
   FirstName: '',
-  SirKana: '',
-  FirstKana: ''
+  KanaFamilyName: '',
+  KanaFirstName: '',
+  postcode: '',
+  address: '',
+  building: '',
+  phoneNumber: '',
+  email: '',
+  allergy: '',
+  message: ''
 })
 </script>
 <template>
@@ -16,15 +21,19 @@ const input = reactive({
     <v-card-title>RSVP</v-card-title>
     <v-card-text>
       お手数ではございますが、出席情報のご登録をお願い申し上げます
-      <v-radio-group v-model="userOption.select" inline>
-        <v-radio label="出席" value="true" color="red"></v-radio>
-        <v-radio label="欠席" value="false" color="blue"></v-radio>
-      </v-radio-group>
       <v-form>
+        <v-row>
+          <v-col>
+            <v-radio-group v-model="userOption" inline>
+              <v-radio label="出席" :value="true"></v-radio>
+              <v-radio label="欠席" :value="false"></v-radio>
+            </v-radio-group>
+          </v-col>
+        </v-row>
         <v-row>
           <v-col cols="6">
             <v-text-field
-              v-model="input.SirName"
+              v-model="input.FamilyName"
               label="姓"
               required
               density="compact"
@@ -33,7 +42,7 @@ const input = reactive({
           </v-col>
           <v-col cols="6">
             <v-text-field
-              v-model="input.SirName"
+              v-model="input.FirstName"
               label="名"
               required
               density="compact"
@@ -44,7 +53,7 @@ const input = reactive({
         <v-row>
           <v-col cols="6">
             <v-text-field
-              v-model="input.SirName"
+              v-model="input.KanaFamilyName"
               label="せい"
               required
               density="compact"
@@ -53,7 +62,7 @@ const input = reactive({
           </v-col>
           <v-col cols="6">
             <v-text-field
-              v-model="input.SirName"
+              v-model="input.KanaFirstName"
               label="めい"
               required
               density="compact"
@@ -64,7 +73,7 @@ const input = reactive({
         <v-row>
           <v-col>
             <v-text-field
-              v-model="input.SirName"
+              v-model="input.postcode"
               label="〒"
               required
               density="compact"
@@ -75,7 +84,7 @@ const input = reactive({
         <v-row>
           <v-col>
             <v-text-field
-              v-model="input.SirName"
+              v-model="input.address"
               label="住所"
               required
               density="compact"
@@ -86,7 +95,7 @@ const input = reactive({
         <v-row>
           <v-col>
             <v-text-field
-              v-model="input.SirName"
+              v-model="input.building"
               label="建物名"
               required
               density="compact"
@@ -97,7 +106,7 @@ const input = reactive({
         <v-row>
           <v-col>
             <v-text-field
-              v-model="input.SirName"
+              v-model="input.phoneNumber"
               label="電話番号"
               required
               density="compact"
@@ -108,7 +117,7 @@ const input = reactive({
         <v-row>
           <v-col>
             <v-text-field
-              v-model="input.SirName"
+              v-model="input.email"
               label="メールアドレス"
               required
               density="compact"
@@ -119,7 +128,7 @@ const input = reactive({
         <v-row>
           <v-col>
             <v-text-field
-              v-model="input.SirName"
+              v-model="input.allergy"
               label="アレルギー"
               required
               density="compact"
@@ -130,7 +139,7 @@ const input = reactive({
         <v-row>
           <v-col>
             <v-text-field
-              v-model="input.SirName"
+              v-model="input.message"
               label="メッセージ"
               required
               density="compact"
@@ -138,7 +147,7 @@ const input = reactive({
             ></v-text-field>
           </v-col>
         </v-row>
-        <v-row justify="center">
+        <v-row>
           <v-col>
             <v-btn> 送信 </v-btn>
           </v-col>

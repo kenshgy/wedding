@@ -16,7 +16,8 @@ export default defineConfig({
     // Permissions-Policy ヘッダーに 'interest-cohort' を追加する
     headers: {
       'Permissions-Policy': 'interest-cohort=()'
-    }
+    },
+    host: true,
   },
   base: "happy-wedding",
   build: {
