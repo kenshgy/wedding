@@ -16,13 +16,14 @@ const input = reactive({
   message: ''
 })
 </script>
+
 <template>
   <v-card>
     <v-card-title>RSVP</v-card-title>
     <v-card-text>
       お手数ではございますが、出席情報のご登録をお願い申し上げます
       <v-form>
-        <v-row>
+        <!-- <v-row>
           <v-col>
             <v-radio-group v-model="userOption" inline>
               <v-radio label="出席" :value="true"></v-radio>
@@ -146,10 +147,13 @@ const input = reactive({
               variant="solo"
             ></v-text-field>
           </v-col>
-        </v-row>
+        </v-row> -->
         <v-row>
           <v-col>
-            <v-btn> 送信 </v-btn>
+            <a
+              href="mailto:ken.openinfo@gmail.com?subject=結婚式出席メール&body=氏名(ふりがな)：%0D%0A住所：%0D%0A電話番号：%0D%0Aメールアドレス：%0D%0Aアレルギー：%0D%0Aメッセージ：%0D%0A"
+              >出席メールを送信する</a
+            >
           </v-col>
         </v-row>
       </v-form>

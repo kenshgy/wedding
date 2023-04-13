@@ -3,6 +3,7 @@ import CarouselCard from './CarouselCard.vue'
 import MessageCard from './MessageCard.vue'
 import FormCard from './FormCard.vue'
 import ScheduleCard from './ScheduleCard.vue'
+import LocationCard from './LocationCard.vue'
 
 // color
 // https://vuetifyjs.com/en/styles/colors/
@@ -27,6 +28,11 @@ import ScheduleCard from './ScheduleCard.vue'
             <schedule-card />
           </v-col>
         </v-row>
+        <!-- <v-row>
+          <v-col>
+            <location-card />
+          </v-col>
+        </v-row> -->
         <v-row>
           <v-col>
             <form-card />
