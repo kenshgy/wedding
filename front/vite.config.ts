@@ -22,5 +22,5 @@ export default defineConfig({
   base: "happy-wedding",
   build: {
     outDir: "../docs"
-  }
+  },
 })

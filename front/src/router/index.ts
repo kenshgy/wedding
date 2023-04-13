@@ -8,7 +8,8 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: HomeView,
+      meta: {title: "Ken&Miki Wedding"}
     },
     {
       path: '/loc',

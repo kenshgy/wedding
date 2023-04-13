@@ -2,7 +2,7 @@
 import { Loader } from '@googlemaps/js-api-loader'
 import { ref } from 'vue'
 
-const apiKeyGoogleMaps = 'AIzaSyCT3zVmd8jWxfvagVhPFYVwXnu5lKDEofQ'
+const apiKeyGoogleMaps = 'a'
 
 const apiOptions = {
   apiKey: apiKeyGoogleMaps
