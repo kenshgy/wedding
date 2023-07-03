@@ -9,7 +9,7 @@ const router = createRouter({
       redirect: '/',
     },    
     {
-      path: '/',
+      path: '/invitation',
       name: 'invitation',
       component: InvitatioinView,
       meta: {title: "Ken&Miki Wedding"}
