@@ -6,10 +6,6 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      redirect: '/',
-    },    
-    {
-      path: '/',
       name: 'invitation',
       component: InvitatioinView,
       meta: {title: "Ken&Miki Wedding"}
