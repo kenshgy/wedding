@@ -4,10 +4,10 @@ import InvitatioinView from '@/views/InvitatioinView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    // {
-    //   path: '/',
-    //   redirect: '/invitation',
-    // },    
+    {
+      path: '/',
+      redirect: '/',
+    },    
     {
       path: '/',
       name: 'invitation',
