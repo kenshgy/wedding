@@ -1,4 +1,4 @@
-# happy-wedding
+# wedding-invitation
 
 ## About
 

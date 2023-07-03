@@ -15,11 +15,12 @@
   },
   "dependencies": {
     "@googlemaps/js-api-loader": "^1.15.1",
+    "google-maps-api-loader": "^1.1.1",
     "nodemailer": "^6.9.1",
     "pinia": "^2.0.32",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6",
-    "vuetify": "^3.1.12"
+    "vuetify": "^3.3.4"
   },
   "devDependencies": {
     "@playwright/test": "^1.31.1",

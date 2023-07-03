@@ -3,6 +3,7 @@ import { reactive, ref } from 'vue'
 
 const userOption = ref(true)
 const input = reactive({
+  participation: true,
   FamilyName: '',
   FirstName: '',
   KanaFamilyName: '',
@@ -21,13 +22,15 @@ const input = reactive({
   <v-card>
     <v-card-title>RSVP</v-card-title>
     <v-card-text>
-      お手数ではございますが、出席情報のご登録をお願い申し上げます
+      お手数ではございますが、出席情報のご登録をお願い申し上げます<br />
+      <v-btn href="https://forms.gle/95PwW4EEi2poZ4X87">出席情報を回答する</v-btn>
+      <!-- {{ input }}
       <v-form>
-        <!-- <v-row>
+        <v-row>
           <v-col>
-            <v-radio-group v-model="userOption" inline>
-              <v-radio label="出席" :value="true"></v-radio>
-              <v-radio label="欠席" :value="false"></v-radio>
+            <v-radio-group v-model="input.participation" inline>
+              <v-radio color="primary" label="出席" :value="input.participation"></v-radio>
+              <v-radio label="欠席" :value="input.participation"></v-radio>
             </v-radio-group>
           </v-col>
         </v-row>
@@ -147,7 +150,7 @@ const input = reactive({
               variant="solo"
             ></v-text-field>
           </v-col>
-        </v-row> -->
+        </v-row>
         <v-row>
           <v-col>
             <a
@@ -156,7 +159,7 @@ const input = reactive({
             >
           </v-col>
         </v-row>
-      </v-form>
+      </v-form> -->
     </v-card-text>
   </v-card>
 </template>

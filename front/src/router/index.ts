@@ -1,20 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import LocationCard from '../views/LocationCard.vue'
+import InvitatioinView from '@/views/InvitatioinView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomeView,
-      meta: {title: "Ken&Miki Wedding"}
-    },
+      redirect: '/invitation',
+    },    
     {
-      path: '/loc',
-      name: 'location',
-      component: LocationCard
+      path: '/invitation',
+      name: 'invitation',
+      component: InvitatioinView,
+      meta: {title: "Ken&Miki Wedding"}
     },
   ]
 })
