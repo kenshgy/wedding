@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
-import TheHeader from '@/components/TheHeader.vue'
 import TheFooter from '@/components/TheFooter.vue'
 </script>
 
@@ -8,7 +7,6 @@ import TheFooter from '@/components/TheFooter.vue'
   <v-app>
     <v-main>
       <v-container>
-        <the-header />
         <RouterView />
         <the-footer />
       </v-container>
@@ -16,4 +14,13 @@ import TheFooter from '@/components/TheFooter.vue'
   </v-app>
 </template>
 
-<style scoped></style>
+<style>
+/* フォントの変更 */
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap');
+
+.v-application {
+  font-family: 'Noto Serif JP';
+  font-size: 16px;
+}
+</style>
