@@ -23,3 +23,11 @@ import LocationCard from '@/components/LocationCard.vue'
     <form-card />
   </v-card>
 </template>
+
+<style scoped>
+.flower-background {
+  background: url('../assets/flowerback.png');
+  background-size: cover;
+  background-position: center center;
+}
+</style>

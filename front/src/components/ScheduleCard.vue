@@ -1,6 +1,6 @@
 <script setup lang="ts"></script>
 <template>
-  <v-card class="mx-5 mt-4 mb-n10" color="red" style="z-index: 100">
+  <v-card class="mx-5 mt-4 mb-n10" style="z-index: 100">
     <div class="text-center pt-10">
       <svg style="width: 135px" id="event" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 26">
         <path
@@ -50,3 +50,12 @@
     <div class="event__time">13時00分 <span>(受付 12時30分)</span></div>
   </div> -->
 </template>
+
+<style scoped>
+.schedule {
+  background: url('../assets/flowerback.png');
+  background-size: cover;
+  background-position: center center;
+  background-color: 'red';
+}
+</style>
