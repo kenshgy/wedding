@@ -19,7 +19,7 @@ export default defineConfig({
     },
     host: true,
   },
-  base: "wedding-invitation",
+  base: "wedding",
   build: {
     outDir: "../docs"
   },

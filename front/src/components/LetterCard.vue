@@ -1,16 +1,9 @@
-<script setup lang="ts">
-import router from '@/router'
-
-async function openLetter() {
-  await new Promise((resolve) => setTimeout(resolve, 800))
-  router.push('./invitation')
-}
-</script>
+<script setup lang="ts"></script>
 <template>
   <v-row>
     <v-col cols="12">
       <div class="card-cover">
-        <input type="checkbox" id="text-check" @click="openLetter()" />
+        <input type="checkbox" id="text-check" />
         <div class="letter" style="width: 100%">
           <label class="letter-img" for="text-check">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 215.6 140.41" class="letter-svg">

@@ -14,6 +14,5 @@ async function openLetter() {
 </script>
 
 <template>
-  <letter-card v-if="!openLetterFlag" @click="openLetter" />
-  <invitation-contents v-if="openLetterFlag" />
+  <invitation-contents />
 </template>
