@@ -1,4 +1,4 @@
-# wedding-invitation
+# wedding
 
 ## About
 
