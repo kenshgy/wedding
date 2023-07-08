@@ -72,7 +72,7 @@
 }
 .letter-img {
   cursor: pointer;
-  width: 30%;
+  width: 100%;
   max-width: 500px;
   margin: auto;
   display: block;
