@@ -4,25 +4,36 @@ import MessageCard from './MessageCard.vue'
 import FormCard from './FormCard.vue'
 import ScheduleCard from './ScheduleCard.vue'
 import LocationCard from '@/components/LocationCard.vue'
+import CountDown from '@/components/CountDown.vue'
 </script>
 
 <template>
   <v-card class="pa-4">
     <v-row>
       <v-col cols="12" lg="6" md="6" sm="12" xs="12">
-        <carousel-card />
+        <CarouselCard />
       </v-col>
       <v-col cols="12" lg="6" md="6" sm="12" xs="12">
-        <message-card />
+        <MessageCard />
       </v-col>
     </v-row>
   </v-card>
-  <schedule-card />
+  <CountDown class="mt-4" />
+  <ScheduleCard />
   <v-card>
-    <location-card />
-    <form-card />
+    <LocationCard />
+    <FormCard />
   </v-card>
 </template>
+
+<style scoped>
+.decolation {
+  background: url('../assets/flowerback.png');
+  background-size: cover;
+  background-position: center center;
+  background-color: 'white';
+}
+</style>
 
 <style scoped>
 .flower-background {
