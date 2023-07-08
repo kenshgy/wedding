@@ -23,4 +23,8 @@ import TheFooter from '@/components/TheFooter.vue'
   font-family: 'Noto Serif JP';
   font-size: 16px;
 }
+.v-main {
+  /* background-image: linear-gradient(0deg, rgba(251, 213, 251, 1), rgba(149, 233, 243, 1)); */
+  background-image: linear-gradient(0deg, rgba(243, 170, 196, 1), rgba(246, 190, 232, 1) 33%, rgba(255, 247, 216, 1) 76%, rgba(183, 187, 255, 1));
+}
 </style>

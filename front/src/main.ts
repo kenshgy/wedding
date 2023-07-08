@@ -22,6 +22,7 @@ const CustomTheme: ThemeDefinition = {
   dark: false,
   colors: {
     background: "#F7DECF",
+  //  background: "#FFFFFF",
   },
 }
 const vuetify = createVuetify({
