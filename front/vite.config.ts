@@ -19,7 +19,7 @@ export default defineConfig({
     },
     host: true,
   },
-  base: "wedding",
+  base: "", // ルートディレクトリ ex.wedding
   build: {
     outDir: "../docs"
   },
