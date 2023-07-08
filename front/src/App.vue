@@ -23,4 +23,8 @@ import TheFooter from '@/components/TheFooter.vue'
   font-family: 'Noto Serif JP';
   font-size: 16px;
 }
+.v-container {
+  background: url('@/assets/flowerback.png');
+  background-size: cover;
+}
 </style>
