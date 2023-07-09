@@ -2,11 +2,11 @@
 # The workflow Creates static website using aws s3
 name: front deploy on AWS
 on:
-  push
-  tags:
-    - front*
-  branches:
-    - main
+  push:
+    tags:
+      - front*
+    branches:
+      - main
 env:
   BUCKET_NAME: "kenmiki.com"
   AWS_REGION: "ap-northeast-1"
