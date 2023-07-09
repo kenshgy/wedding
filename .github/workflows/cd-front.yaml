@@ -31,11 +31,11 @@ jobs:
         with:
           path: "**/node_modules"
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-      - name: npm install
+      - name: package install
         if: ${{ steps.node_modules_cache_id.outputs.cache-hit != 'true' }}
-        run: npm ci
+        run: cd front && npm ci
       - name: build
-        run: cd frontend && npm run build:dev && echo ${{ github.sha }} > dist/version.txt
+        run: cd front && npm run build
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
