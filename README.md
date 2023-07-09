@@ -4,7 +4,7 @@
 
 結婚式の招待状アプリ
 
-## Develop
+## 開発
 
 開発環境の構築手順
 
@@ -20,7 +20,12 @@ npm install
 npm run dev
 ```
 
-## Deploy
+## デプロイ
 
 デプロイ手順
-main にマージするとデプロイされます
+tagを作成する
+例
+```
+git tag front_20230709_01
+git push origin front_20230709_01
+```
