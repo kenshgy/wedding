@@ -1,5 +1,6 @@
 <script setup lang="ts"></script>
 <template>
+  <div class="test">
   <v-row>
     <v-col cols="12">
       <div class="card-cover">
@@ -46,6 +47,7 @@
       </div>
     </v-col>
   </v-row>
+</div>
 </template>
 
 <style scoped>
@@ -118,5 +120,14 @@
 
 .letter-cls-4 {
   fill: #fff1d2;
+}
+
+
+.test {
+  /* background: url('@/assets/flowerback.png'); */
+  /* background-size: cover; */
+}
+.main{
+  /* background-color: #fffcf4; */
 }
 </style>

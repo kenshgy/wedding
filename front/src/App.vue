@@ -25,6 +25,12 @@ import TheFooter from '@/components/TheFooter.vue'
 }
 .v-main {
   /* background-image: linear-gradient(0deg, rgba(251, 213, 251, 1), rgba(149, 233, 243, 1)); */
-  background-image: linear-gradient(0deg, rgba(243, 170, 196, 1), rgba(246, 190, 232, 1) 33%, rgba(255, 247, 216, 1) 76%, rgba(183, 187, 255, 1));
+  /* background-image: linear-gradient(0deg, rgba(243, 170, 196, 1), rgba(246, 190, 232, 1) 33%, rgba(255, 247, 216, 1) 76%, rgba(183, 187, 255, 1)); */
+  background-image: linear-gradient(0deg, rgba(255, 209, 205, 1), rgba(240, 226, 226, 1));
+
+  /* background: url('@/assets/test.jpg'); */
+  background: url('@/assets/test2.jpg');
+  /* background: url('@/assets/test3.jpg'); */
+  background-size: cover;
 }
 </style>
