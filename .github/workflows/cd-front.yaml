@@ -39,10 +39,10 @@ jobs:
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
-          role-to-assume: arn:aws:iam::1234567890:role/oidc-github
+          role-to-assume: arn:aws:iam::200966924140:role/oidc-github
           role-session-name: samplerolesession
           aws-region: ${{ env.AWS_REGION }}
       # Upload a file to AWS s3
       - name: upload to s3
         run: |
-          aws s3 cp ./front/dist*/ s3://${{ env.BUCKET_NAME }}/
+          cd front/dist && aws sync ./* s3://${{ env.BUCKET_NAME }}/
