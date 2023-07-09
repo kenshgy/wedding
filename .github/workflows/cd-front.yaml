@@ -3,8 +3,8 @@
 name: front deploy on AWS
 on:
   push:
-    branches:
-      - main
+    tags:
+      - front*
 env:
   BUCKET_NAME: "kenmiki.com"
   AWS_REGION: "ap-northeast-1"
