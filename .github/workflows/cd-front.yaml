@@ -3,8 +3,6 @@
 name: front deploy on AWS
 on:
   push:
-    tags:
-      - front*
     branches:
       - main
 env:
