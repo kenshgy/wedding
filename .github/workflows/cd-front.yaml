@@ -45,4 +45,4 @@ jobs:
       # Upload a file to AWS s3
       - name: upload to s3
         run: |
-          cd front/dist && aws s3 sync ./* s3://${{ env.BUCKET_NAME }}/ --cache-control="no-cache, max-age=0" --delete
+          cd front && aws s3 sync dist s3://${{ env.BUCKET_NAME }}/ --cache-control="no-cache, max-age=0" --delete
