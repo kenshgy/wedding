@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import handImg from '@/assets/hand.png'
+import handImg from '@/assets/hand.jpg'
 </script>
 <template>
   <v-carousel show-arrows="hover">
