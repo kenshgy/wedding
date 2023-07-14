@@ -35,12 +35,12 @@ startCountDown()
       <v-col style="font-size: 30px"> Count Down </v-col>
     </v-row>
     <v-row>
-      <v-col style="font-size: 50px"> {{ count.date }}<br />DAYS </v-col>
+      <v-col class="py-0" style="font-size: 50px"> {{ count.date }}<br />DAYS </v-col>
     </v-row>
     <v-row style="font-size: 30px">
-      <v-col> {{ count.hour }}<br />Hours </v-col>
-      <v-col> {{ count.minute }}<br />Minutes </v-col>
-      <v-col> {{ count.second }}<br />Seconds </v-col>
+      <v-col> {{ count.hour }}<br />HOURS </v-col>
+      <v-col> {{ count.minute }}<br />MINUTES </v-col>
+      <v-col> {{ count.second }}<br />SECONDS </v-col>
     </v-row>
   </v-card>
 </template>
