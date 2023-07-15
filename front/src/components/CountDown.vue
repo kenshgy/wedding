@@ -9,8 +9,6 @@ const count = reactive({
   second: 0
 })
 function countdown() {
-  console.log('count down')
-
   const diff = target - Date.now()
   const numbers = [
     diff / 1000 / 60 / 60 / 24,
