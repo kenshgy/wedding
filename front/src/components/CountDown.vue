@@ -33,12 +33,32 @@ startCountDown()
       <v-col style="font-size: 30px"> Count Down </v-col>
     </v-row>
     <v-row>
-      <v-col class="py-0" style="font-size: 50px"> {{ count.date }}<br />DAYS </v-col>
+      <v-col class="py-0">
+        <div class="time">
+          {{ count.date }}
+        </div>
+        <div class="time_sub">DAYS</div>
+      </v-col>
     </v-row>
     <v-row style="font-size: 30px">
-      <v-col> {{ count.hour }}<br />HOURS </v-col>
-      <v-col> {{ count.minute }}<br />MINUTES </v-col>
-      <v-col> {{ count.second }}<br />SECONDS </v-col>
+      <v-col cols="4">
+        <div class="time">
+          {{ count.hour }}
+        </div>
+        <div class="time_sub">HOURS</div>
+      </v-col>
+      <v-col cols="4">
+        <div class="time">
+          {{ count.minute }}
+        </div>
+        <div class="time_sub">MINUTES</div>
+      </v-col>
+      <v-col cols="4">
+        <div class="time">
+          {{ count.second }}
+        </div>
+        <div class="time_sub">SECONDS</div>
+      </v-col>
     </v-row>
   </v-card>
 </template>
@@ -48,6 +68,11 @@ startCountDown()
   background-color: pink;
   background-image: url('../assets/flowerback.png');
   color: white;
-  font-family: 'Jomolhari';
+}
+.time {
+  font-size: 50px;
+}
+.time_sub {
+  font-size: 15px;
 }
 </style>
