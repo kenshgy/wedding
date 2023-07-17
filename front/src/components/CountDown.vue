@@ -30,7 +30,7 @@ startCountDown()
 <template>
   <v-card class="countdown text-center">
     <v-row>
-      <v-col style="font-size: 30px"> Count Down </v-col>
+      <v-col class="title"> Countdown </v-col>
     </v-row>
     <v-row>
       <v-col class="py-0">
