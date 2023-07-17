@@ -32,32 +32,32 @@ startCountDown()
     <v-row>
       <v-col class="title"> Countdown </v-col>
     </v-row>
-    <v-row>
-      <v-col class="py-0">
-        <div class="time">
-          {{ count.date }}
-        </div>
-        <div class="time_sub">DAYS</div>
+    <v-row align="end">
+      <v-col cols="3"></v-col>
+      <v-col cols="3" class="py-0 time_main">
+        {{ count.date }}
       </v-col>
+      <v-col cols="3" class="time_sub">Days</v-col>
+      <v-col cols="3"></v-col>
     </v-row>
-    <v-row style="font-size: 30px">
+    <v-row>
       <v-col cols="4">
         <div class="time">
           {{ count.hour }}
         </div>
-        <div class="time_sub">HOURS</div>
+        <div class="time_sub">Hours</div>
       </v-col>
       <v-col cols="4">
         <div class="time">
           {{ count.minute }}
         </div>
-        <div class="time_sub">MINUTES</div>
+        <div class="time_sub">Minutes</div>
       </v-col>
       <v-col cols="4">
         <div class="time">
           {{ count.second }}
         </div>
-        <div class="time_sub">SECONDS</div>
+        <div class="time_sub">Seconds</div>
       </v-col>
     </v-row>
   </v-card>
@@ -69,10 +69,16 @@ startCountDown()
   background-image: url('../assets/flowerback.png');
   color: white;
 }
+.time_main {
+  font-family: 'Tangerine', cursive;
+  font-size: 80px;
+}
 .time {
-  font-size: 50px;
+  font-family: 'Tangerine', cursive;
+  font-size: 30px;
 }
 .time_sub {
-  font-size: 15px;
+  font-family: 'Tangerine', cursive;
+  font-size: 30px;
 }
 </style>

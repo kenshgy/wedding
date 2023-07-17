@@ -23,7 +23,7 @@ import TheFooter from '@/components/TheFooter.vue'
 /* 全体的なフォント */
 .v-application {
   font-family: 'Noto Serif JP';
-  font-size: 16px;
+  font-size: 14px;
 }
 
 /* 英語のタイトル部分のフォント */
