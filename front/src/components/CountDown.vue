@@ -70,15 +70,20 @@ startCountDown()
   color: white;
 }
 .time_main {
-  font-family: 'Tangerine', cursive;
-  font-size: 80px;
+  /* font-family: 'Tangerine', cursive; */
+  /* font-family: 'Pangolin', cursive; */
+  /* font-size: 80px; */
+  font-size: 50px;
 }
 .time {
-  font-family: 'Tangerine', cursive;
-  font-size: 30px;
+  /* font-family: 'Tangerine', cursive; */
+  /* font-family: 'Pangolin', cursive; */
+  /* font-size: 30px; */
+  font-size: 40px;
 }
 .time_sub {
-  font-family: 'Tangerine', cursive;
-  font-size: 30px;
+  /* font-family: 'Tangerine', cursive; */
+  font-family: 'Pangolin', cursive;
+  font-size: 20px;
 }
 </style>

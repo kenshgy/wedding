@@ -1,6 +1,6 @@
 <script setup lang="ts"></script>
 <template>
-  <div class="text-center title">Wedding Invitation</div>
+  <div class="text-center title wedding">Wedding Invitation</div>
   <div class="text-center">
     Ken & Miki <br />
     2023.11.26
@@ -33,5 +33,9 @@
   stroke-linejoin: round;
   stroke-miterlimit: 10;
   stroke-width: 3px;
+}
+.wedding {
+  border-bottom: 1px solid #927e2e;
+  margin-bottom: 20px;
 }
 </style>
