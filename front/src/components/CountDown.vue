@@ -34,11 +34,11 @@ startCountDown()
     </v-row>
     <v-row align="end">
       <v-col cols="3"></v-col>
-      <v-col cols="3" class="py-0 time_main">
+      <v-col cols="4" class="py-0 time_main">
         {{ count.date }}
       </v-col>
       <v-col cols="3" class="time_sub">Days</v-col>
-      <v-col cols="3"></v-col>
+      <v-col cols="2"></v-col>
     </v-row>
     <v-row>
       <v-col cols="4">
