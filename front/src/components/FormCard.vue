@@ -2,7 +2,9 @@
 
 <template>
   <div class="text-center pa-4">
-    <div>お手数ではございますが<br />◯◯までに出席情報のご登録をお願い申し上げます<br /></div>
+    <div>
+      お手数ではございますが<br />10月23日(月)までに出席情報のご登録をお願い申し上げます<br />
+    </div>
     <v-row>
       <v-col cols="1" lg="4" md="4" sm="2" xs="1"></v-col>
       <v-col cols="10" lg="4" md="4" sm="8" xs="10">
