@@ -1,16 +1,18 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useDisplay } from 'vuetify/lib/framework.mjs'
-import img1 from '@/assets/od0047.jpg'
-import img2 from '@/assets/od0003.jpg'
-import img3 from '@/assets/od0162.jpg'
+import img1 from '@/assets/koma01.jpg'
+import img2 from '@/assets/koma02.jpg'
+import img3 from '@/assets/koma03.jpg'
 
-const imgList = [img1, img2, img3]
-
+const props = defineProps({
+  imageList: {
+    type: Array<String>,
+    default: [img1, img2, img3]
+  }
+})
 const { name } = useDisplay()
 const height = computed(() => {
-  // name is reactive and
-  // must use .value
   switch (name.value) {
     case 'xs':
       return 220
@@ -30,7 +32,7 @@ const height = computed(() => {
 </script>
 <template>
   <v-carousel :show-arrows="false" hide-delimiters cycle interval :height="height">
-    <v-carousel-item v-for="(img, i) in imgList" :key="i" :src="imgList[i]" cover>
+    <v-carousel-item v-for="(img, i) in props.imageList" :key="i" :src="props.imageList[i]" cover>
     </v-carousel-item>
   </v-carousel>
 </template>
