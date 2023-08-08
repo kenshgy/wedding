@@ -1,14 +1,11 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useDisplay } from 'vuetify/lib/framework.mjs'
+import img1 from '@/assets/od0047.jpg'
+import img2 from '@/assets/od0003.jpg'
+import img3 from '@/assets/od0162.jpg'
 
-import img1 from '@/assets/hand.jpg'
-import img2 from '@/assets/2shot.jpg'
-import img3 from '@/assets/flight.jpg'
-import img4 from '@/assets/disney.jpg'
-import img5 from '@/assets/date.jpg'
-
-const imgList = [img1, img2, img3, img4, img5]
+const imgList = [img1, img2, img3]
 
 const { name } = useDisplay()
 const height = computed(() => {
