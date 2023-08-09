@@ -1,3 +1,3 @@
 <template>
-  <v-footer color="blue"> 2023 (c) Ken & Miki </v-footer>
+  <v-footer color="#996463">  <p style="color: white">2023 Ken & Miki</p> </v-footer>
 </template>

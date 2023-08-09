@@ -5,7 +5,7 @@ import TheFooter from '@/components/TheFooter.vue'
 
 <template>
   <v-app>
-    <v-main>
+    <v-main :class="{ 'home-page': $route.path === '/', 'invitation-page': $route.path === '/invitation' }">
       <v-container>
         <RouterView />
         <the-footer />
@@ -16,7 +16,6 @@ import TheFooter from '@/components/TheFooter.vue'
 
 <style>
 /* フォントの変更 */
-/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Tangerine&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
@@ -31,5 +30,14 @@ import TheFooter from '@/components/TheFooter.vue'
 .title {
   font-family: 'Tangerine', cursive;
   font-size: 65px;
+}
+
+.invitation-page {
+  background: url('@/assets/pink.jpg');
+  background-size: cover;
+}
+
+.home-page {
+  background: url('@/assets/flowerback.png');
 }
 </style>

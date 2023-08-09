@@ -28,7 +28,7 @@ startCountDown()
 </script>
 
 <template>
-  <v-card class="countdown text-center">
+  <v-card class="countdown text-center count_down-bg">
     <v-row>
       <v-col class="title"> Countdown </v-col>
     </v-row>
@@ -70,20 +70,19 @@ startCountDown()
   color: white;
 }
 .time_main {
-  /* font-family: 'Tangerine', cursive; */
-  /* font-family: 'Pangolin', cursive; */
-  /* font-size: 80px; */
   font-size: 50px;
 }
 .time {
-  /* font-family: 'Tangerine', cursive; */
-  /* font-family: 'Pangolin', cursive; */
-  /* font-size: 30px; */
   font-size: 40px;
 }
 .time_sub {
-  /* font-family: 'Tangerine', cursive; */
   font-family: 'Pangolin', cursive;
   font-size: 20px;
+}
+
+
+.count_down-bg {
+  background: url('@/assets/count-down.jpg');
+  background-size: cover;
 }
 </style>
