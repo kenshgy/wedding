@@ -1,4 +1,13 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { Schedule } from '@/components/schedule'
+
+const props = defineProps({
+  schedule: {
+    type: Array<Schedule>,
+    required: true
+  }
+})
+</script>
 <template>
   <v-card class="mx-5 mt-4 mb-n10 schedule-bg" style="z-index: 100">
     <div class="text-center title">Schedule</div>
@@ -6,31 +15,20 @@
     <v-card-subtitle class="text-center pt-4"> 2023年11月26日(日) </v-card-subtitle>
 
     <v-timeline class="mx-10" density="compact">
-      <v-timeline-item size="x-small" dot-color="orange-darken-3">
+      <v-timeline-item
+        v-for="(item, index) in props.schedule"
+        size="x-small"
+        :dot-color="item.color"
+        :key="index"
+      >
         <div class="mb-4">
+          <div class="font-weight-normal">{{ item.time }}</div>
           <div>
-            挙式
-            <a href="https://www.meijikinenkan.gr.jp/access/"> ＠明治神宮 </a>
-          </div>
-          <div class="font-weight-normal">17時40分</div>
-        </div>
-      </v-timeline-item>
-      <v-timeline-item size="x-small" dot-color="red-darken-1">
-        <div class="mb-4">
-          <div>
-            披露宴
-            <a href="https://www.meijikinenkan.gr.jp/wedding/banquet/fuyou.html">
-              ＠明治記念館 芙蓉
-            </a>
+            {{ item.title }}
+            <a v-if="item.locationLink !== ''" :href="item.locationLink"> ＠{{ item.location }} </a>
             <br />
-            明治神宮から明治記念館への移動は送迎バスをご用意しています
+            <p v-if="item.comment !== ''">{{ item.comment }}</p>
           </div>
-          <div class="font-weight-normal">18時50分</div>
-        </div>
-      </v-timeline-item>
-      <v-timeline-item size="x-small" dot-color="indigo-darken-4">
-        <div class="mb-4">
-          <div class="font-weight-normal">21時20分</div>
         </div>
       </v-timeline-item>
     </v-timeline>

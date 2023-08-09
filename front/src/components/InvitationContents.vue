@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { Schedule } from '@/components/schedule'
 import CarouselCard from './CarouselCard.vue'
 import MessageCard from './MessageCard.vue'
 import FormCard from './FormCard.vue'
@@ -15,6 +16,13 @@ import img9 from '@/assets/od0291.jpg'
 
 const topImages = [img5, img7, img9, img8]
 const middleImages = [img1, img2, img3]
+
+const props = defineProps({
+  schedule: {
+    type: Array<Schedule>,
+    required: true
+  }
+})
 </script>
 
 <template>
@@ -30,7 +38,7 @@ const middleImages = [img1, img2, img3]
   </v-card>
   <CountDown class="mt-4" />
   <CarouselCard :image-list="middleImages" class="mt-4" />
-  <ScheduleCard />
+  <ScheduleCard :schedule="props.schedule" />
   <v-card>
     <LocationCard />
     <FormCard />
