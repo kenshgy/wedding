@@ -1,31 +1,89 @@
 <script setup lang="ts">
 import { reactive } from 'vue'
 
+const target = new Date(2023, 10, 26, 17, 40).getTime()
+const count = reactive({
+  date: 0,
+  hour: 0,
+  minute: 0,
+  second: 0
+})
 function countdown() {
-  const target = new Date(2023, 10, 26, 17, 40).getTime()
   const diff = target - Date.now()
-  //   const numbers = [
-  //     diff / 1000 / 60 / 60 / 24,
-  //     (diff / 1000 / 60 / 60) % 24,
-  //     (diff / 1000 / 60) % 60,
-  //     (diff / 1000) % 60
-  //   ]
-  //   Array.from(document.querySelectorAll('#container > .num'), (elm, i) => {
-  //     elm.textContent = `${Math.floor(numbers[i])}`.padStart(2, 0)
-  //   })
+  const numbers = [
+    diff / 1000 / 60 / 60 / 24,
+    (diff / 1000 / 60 / 60) % 24,
+    (diff / 1000 / 60) % 60,
+    (diff / 1000) % 60
+  ]
+  count.date = Math.floor(numbers[0])
+  count.hour = Math.floor(numbers[1])
+  count.minute = Math.floor(numbers[2])
+  count.second = Math.floor(numbers[3])
 }
-countdown()
-setInterval(countdown, 1000)
+function startCountDown(): void {
+  setInterval(countdown, 1000)
+}
+startCountDown()
 </script>
 
 <template>
-  <v-card>
-    <div id="container">
-      2023年1月1日まで残り
-      <span class="num"></span>日 <span class="num"></span>時間 <span class="num"></span>分
-      <span class="num"></span>秒
-    </div>
+  <v-card class="countdown text-center">
+    <v-row>
+      <v-col class="title"> Countdown </v-col>
+    </v-row>
+    <v-row align="end">
+      <v-col cols="3"></v-col>
+      <v-col cols="4" class="py-0 time_main">
+        {{ count.date }}
+      </v-col>
+      <v-col cols="3" class="time_sub">Days</v-col>
+      <v-col cols="2"></v-col>
+    </v-row>
+    <v-row>
+      <v-col cols="4">
+        <div class="time">
+          {{ count.hour }}
+        </div>
+        <div class="time_sub">Hours</div>
+      </v-col>
+      <v-col cols="4">
+        <div class="time">
+          {{ count.minute }}
+        </div>
+        <div class="time_sub">Minutes</div>
+      </v-col>
+      <v-col cols="4">
+        <div class="time">
+          {{ count.second }}
+        </div>
+        <div class="time_sub">Seconds</div>
+      </v-col>
+    </v-row>
   </v-card>
 </template>
 
-<style scoped></style>
+<style scoped>
+.countdown {
+  background-color: pink;
+  background-image: url('../assets/flowerback.png');
+  color: white;
+}
+.time_main {
+  /* font-family: 'Tangerine', cursive; */
+  /* font-family: 'Pangolin', cursive; */
+  /* font-size: 80px; */
+  font-size: 50px;
+}
+.time {
+  /* font-family: 'Tangerine', cursive; */
+  /* font-family: 'Pangolin', cursive; */
+  /* font-size: 30px; */
+  font-size: 40px;
+}
+.time_sub {
+  /* font-family: 'Tangerine', cursive; */
+  font-family: 'Pangolin', cursive;
+  font-size: 20px;
+}
+</style>
