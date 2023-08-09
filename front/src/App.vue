@@ -5,10 +5,15 @@ import TheFooter from '@/components/TheFooter.vue'
 
 <template>
   <v-app>
-    <v-main :class="{ 'home-page': $route.path === '/', 'invitation-page': $route.path === '/invitation' }">
+    <v-main
+      :class="{
+        'home-page': $route.path === '/',
+        'invitation-page': $route.path === '/invitation'
+      }"
+    >
       <v-container>
         <RouterView />
-        <the-footer />
+        <the-footer v-if="$route.path === '/invitation'" />
       </v-container>
     </v-main>
   </v-app>
