@@ -1,7 +1,6 @@
 <script setup lang="ts"></script>
 <template>
-
-    <v-card class="mx-5 mt-4 mb-n10 schedule-bg" style="z-index: 100">
+  <v-card class="mx-5 mt-4 mb-n10 schedule-bg" style="z-index: 100">
     <div class="text-center title">Schedule</div>
 
     <v-card-subtitle class="text-center pt-4"> 2023年11月26日(日) </v-card-subtitle>
