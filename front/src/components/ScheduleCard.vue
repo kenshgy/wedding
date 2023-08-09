@@ -47,6 +47,10 @@
 }
 
 .schedule-bg {
+    /* 候補1ピンク */
   background-image: linear-gradient(0deg, rgb(254, 240, 238), rgba(255, 255, 255, 1) 55%);
+    /* 候補2 黒 */
+  /* background: url('@/assets/black3.jpg'); */
+  /* background-size: auto; */
 }
 </style>

@@ -5,7 +5,7 @@ import TheFooter from '@/components/TheFooter.vue'
 
 <template>
   <v-app>
-    <v-main :class="{'home-page': $route.path === '/', 'invitation-page': $route.path === '/invitation'}">
+    <v-main :class="{ 'home-page': $route.path === '/', 'invitation-page': $route.path === '/invitation' }">
       <v-container>
         <RouterView />
         <the-footer />
@@ -32,15 +32,19 @@ import TheFooter from '@/components/TheFooter.vue'
   font-family: 'Tangerine', cursive;
   font-size: 65px;
 }
+
 .invitation-page {
   /* background-image: linear-gradient(0deg, rgba(251, 213, 251, 1), rgba(149, 233, 243, 1)); */
   /* background-image: linear-gradient(0deg, rgba(243, 170, 196, 1), rgba(246, 190, 232, 1) 33%, rgba(255, 247, 216, 1) 76%, rgba(183, 187, 255, 1)); */
   /* background-image: linear-gradient(0deg, rgba(255, 209, 205, 1), rgba(240, 226, 226, 1)); */
   /* background-image: radial-gradient(rgba(240, 226, 226, 1) 30%, rgba(253, 177, 170, 1)); */
 
-  /* background: url('@/assets/test.jpg'); */
-  background: url('@/assets/test2.jpg');
-  /* background: url('@/assets/test3.jpg'); */
+  /* 候補1 ピンク */
+  background: url('@/assets/pink.jpg');
+
+  /* 候補2 黒 */
+  /* background: url('@/assets/black.jpg'); */
+
   background-size: cover;
 }
 
@@ -49,8 +53,13 @@ import TheFooter from '@/components/TheFooter.vue'
   /* background: "#e3b0bf", */
   /* background-color: #e3b0bf; */
   /* background-color: #fddfdd; */
-  background-color: #ffeded;
+  /* background-color: #ffeded; */
+
+  /* 候補1 ピンク */
   background: url('@/assets/flowerback.png');
-  background-size: cover;
+
+  /* 候補2 黒 */
+  /* background: url('@/assets/black3.jpg'); */
+  /* background-size: cover; */
 }
 </style>
