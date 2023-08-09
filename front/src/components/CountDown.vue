@@ -68,35 +68,21 @@ startCountDown()
   background-color: pink;
   background-image: url('../assets/flowerback.png');
   color: white;
-  /* color: rgb(59, 50, 50); */
 }
 .time_main {
-  /* font-family: 'Tangerine', cursive; */
-  /* font-family: 'Pangolin', cursive; */
-  /* font-size: 80px; */
   font-size: 50px;
 }
 .time {
-  /* font-family: 'Tangerine', cursive; */
-  /* font-family: 'Pangolin', cursive; */
-  /* font-size: 30px; */
   font-size: 40px;
 }
 .time_sub {
-  /* font-family: 'Tangerine', cursive; */
   font-family: 'Pangolin', cursive;
   font-size: 20px;
 }
 
 
 .count_down-bg {
-    /* 候補1ピンク */
-  /* background-image: linear-gradient(0deg, rgb(254, 240, 238), rgba(255, 255, 255, 1) 55%); */
-    /* 候補2 黒 */
-  /* background: url('@/assets/black3.jpg'); */
-  /* background-size: auto; */
-  background: url('@/assets/test6.jpg');
+  background: url('@/assets/count-down.jpg');
   background-size: cover;
-
 }
 </style>

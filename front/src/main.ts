@@ -21,10 +21,6 @@ app.use(router)
 const CustomTheme: ThemeDefinition = {
   dark: false,
   colors: {
-    // background: "#F7DEC1F",
-    // background: "#FFF1FFF",
-
-    // 候補1 ピンク
     background: "#ffeded",
   },
 }
