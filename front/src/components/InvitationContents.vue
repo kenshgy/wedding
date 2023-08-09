@@ -13,7 +13,7 @@ import img7 from '@/assets/od0051.jpg'
 import img8 from '@/assets/od0241.jpg'
 import img9 from '@/assets/od0291.jpg'
 
-const topImages = [img5, img7, img8, img9]
+const topImages = [img5, img7, img9, img8]
 const middleImages = [img1, img2, img3]
 </script>
 
