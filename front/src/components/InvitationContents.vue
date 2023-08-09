@@ -29,7 +29,7 @@ const middleImages = [img1, img2, img3]
     </v-row>
   </v-card>
   <CountDown class="mt-4" />
-  <CarouselCard :image-list="middleImages" class="pa-4" />
+  <CarouselCard :image-list="middleImages" class="mt-4" />
   <ScheduleCard />
   <v-card>
     <LocationCard />
