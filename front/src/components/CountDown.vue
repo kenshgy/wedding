@@ -70,13 +70,16 @@ startCountDown()
   color: white;
 }
 .time_main {
+  font-family: 'Dancing Script', cursive;
   font-size: 50px;
 }
 .time {
+  font-family: 'Dancing Script', cursive;
   font-size: 40px;
 }
 .time_sub {
-  font-family: 'Pangolin', cursive;
+  font-family: 'Cookie', cursive;
+
   font-size: 20px;
 }
 

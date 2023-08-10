@@ -21,7 +21,7 @@ app.use(router)
 const CustomTheme: ThemeDefinition = {
   dark: false,
   colors: {
-    background: "#ffeded",
+    background: "#fff",
   },
 }
 const vuetify = createVuetify({

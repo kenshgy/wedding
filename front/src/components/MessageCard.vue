@@ -1,24 +1,29 @@
 <script setup lang="ts"></script>
 <template>
   <div class="text-center title wedding">Wedding Invitation</div>
-  <div class="text-center">
-    Ken & Miki <br />
-    2023.11.26
-  </div>
+
   <div class="text-center">
     謹啓 <br />
     <br />
-    みなさまいかがおすごしでしょうか <br />
+    皆様におかれましては<br />
+    ご清祥のこととお慶び申し上げます <br />
     <br />
-    このたび 私たちは結婚をすることになりました<br />
-    日頃お世話になっておりますみなさまに<br />
+    このたび <br />
+    私たちは結婚式を執り行うこととなりました<br />
+    日頃お世話になっております皆様に<br />
     私どもの門出を見守りいただきたく<br />
     ささやかながら小宴を催したく存じます<br />
     <br />
     ご多用中 誠に恐縮ではございますが<br />
     ぜひご出席をいただきたく ご案内申し上げます<br />
     <br />
-    謹白
+    皆様にお会いできることを<br />
+    心より楽しみにしております<br />
+    <br />
+    謹白<br />
+    <br />
+    Ken & Miki <br />
+    <br />
   </div>
 </template>
 <style>
