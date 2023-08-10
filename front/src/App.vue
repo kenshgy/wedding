@@ -8,7 +8,8 @@ import TheFooter from '@/components/TheFooter.vue'
     <v-main
       :class="{
         'home-page': $route.path === '/',
-        'invitation-page': $route.path === '/invitation'
+        'invitation-page': $route.path === '/invitation',
+        'invite-page': $route.path === '/invite',
       }"
     >
       <v-container>
@@ -40,6 +41,11 @@ import TheFooter from '@/components/TheFooter.vue'
 }
 
 .invitation-page {
+  background: url('@/assets/pink.jpg');
+  background-size: cover;
+}
+
+.invite-page {
   background: url('@/assets/pink.jpg');
   background-size: cover;
 }
