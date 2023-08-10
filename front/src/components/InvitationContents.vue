@@ -45,19 +45,4 @@ const props = defineProps({
   </v-card>
 </template>
 
-<style scoped>
-.decolation {
-  background: url('../assets/flowerback.png');
-  background-size: cover;
-  background-position: center center;
-  background-color: 'white';
-}
-</style>
-
-<style scoped>
-.flower-background {
-  background: url('../assets/flowerback.png');
-  background-size: cover;
-  background-position: center center;
-}
-</style>
+<style scoped></style>

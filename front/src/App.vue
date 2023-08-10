@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
-import TheFooter from '@/components/TheFooter.vue'
 </script>
 
 <template>
@@ -9,12 +8,11 @@ import TheFooter from '@/components/TheFooter.vue'
       :class="{
         'home-page': $route.path === '/',
         'invitation-page': $route.path === '/invitation',
-        'invite-page': $route.path === '/invite',
+        'invite-page': $route.path === '/invite'
       }"
     >
       <v-container>
         <RouterView />
-        <the-footer v-if="$route.path === '/invitation'" />
       </v-container>
     </v-main>
   </v-app>
