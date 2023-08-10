@@ -3,6 +3,7 @@ import { ref, onUnmounted } from 'vue'
 import type { Schedule } from '@/components/schedule'
 import InvitationContents from '@/components/InvitationContents.vue'
 import LetterCard from '@/components/LetterCard.vue'
+import TheFooter from '@/components/TheFooter.vue'
 
 const props = defineProps({
   schedule: {
@@ -34,7 +35,10 @@ onUnmounted(() => {
     <letter-card v-if="showEnvelope" @click="openLetter" />
   </Transition>
   <Transition>
-    <invitation-contents v-if="showLetter" :schedule="props.schedule" />
+    <div v-if="showLetter">
+      <invitation-contents :schedule="props.schedule" />
+      <the-footer />
+    </div>
   </Transition>
 </template>
 
