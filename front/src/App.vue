@@ -22,8 +22,10 @@ import TheFooter from '@/components/TheFooter.vue'
 <style>
 /* フォントの変更 */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Tangerine&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Dancing+Script:wght@500&display=swap');
 
 /* 全体的なフォント */
 .v-application {
@@ -33,7 +35,7 @@ import TheFooter from '@/components/TheFooter.vue'
 
 /* 英語のタイトル部分のフォント */
 .title {
-  font-family: 'Tangerine', cursive;
+  font-family: 'Great Vibes', cursive;
   font-size: 65px;
 }
 
