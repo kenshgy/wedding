@@ -17,6 +17,14 @@ const wedding: Schedule[] =   [
     comment: ''
   },
   {
+    title: '親族紹介',
+    location: '明治神宮神楽殿控室',
+    locationLink: 'https://www.meijijingu.or.jp/access/',
+    time: '16時00分',
+    color: 'blue-lighten-2',
+    comment: ''
+  },
+  {
     title: '挙式',
     location: '明治神宮奉賓殿　右殿',
     locationLink: 'https://www.meijijingu.or.jp/access/',
