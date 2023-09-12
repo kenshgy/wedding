@@ -12,16 +12,8 @@ const wedding: Schedule[] =   [
     title: '儀式参列者ご来社',
     location: '明治神宮神楽殿控室',
     locationLink: 'https://www.meijijingu.or.jp/access/',
-    time: '15時50分',
+    time: '15時50分迄',
     color: 'blue-lighten-3',
-    comment: ''
-  },
-  {
-    title: '親族紹介',
-    location: '明治神宮神楽殿控室',
-    locationLink: 'https://www.meijijingu.or.jp/access/',
-    time: '16時00分',
-    color: 'blue-lighten-2',
     comment: ''
   },
   {
@@ -54,9 +46,9 @@ export const reception: Schedule[] = [
     title: '来賓　ご来館',
     location: '明治記念館来賓控室',
     locationLink: 'https://www.meijikinenkan.gr.jp/wedding/access/',
-    time: '18時20分',
+    time: '18時20分迄',
     color: 'red-darken-1',
-    comment: '庭園にて歓談・スナップ写真の撮影'
+    comment: 'ご来館いただいたあと、庭園にてご歓談の時間がございます'
   },
   {
     title: '披露宴',
