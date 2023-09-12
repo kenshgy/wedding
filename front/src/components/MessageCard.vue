@@ -20,9 +20,9 @@
     皆様にお会いできることを<br />
     心より楽しみにしております<br />
     <br />
-    謹白<br />
+    敬具<br />
     <br />
-    Ken & Miki <br />
+    Kensuke & Miki <br />
     <br />
   </div>
 </template>
