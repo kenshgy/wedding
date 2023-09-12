@@ -1,10 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import InvitatioinView from '@/views/InvitatioinView.vue'
 import IndexView from "@/views/indexView.vue"
-// import InvitatioinForReceptionView from "@/views/InvitatioinForReceptionView.vue"
 import { reception } from '@/components/schedule'
 import { scheduleAll } from '@/components/schedule'
-
+import {LOCATION_CEREMONY, LOCATION_RECEPTION} from '@/components/locations'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -18,14 +17,14 @@ const router = createRouter({
     {
       path: '/invitation',
       name: 'invitation',
-      props: {schedule: scheduleAll},
+      props: {schedule: scheduleAll, location: LOCATION_CEREMONY},
       component: InvitatioinView,
       meta: {title: "Ken&Miki Wedding"}
     },
     {
       path: '/invite',
       name: 'invite',
-      props: {schedule: reception},
+      props: {schedule: reception, location: LOCATION_RECEPTION},
       component: InvitatioinView,
       meta: {title: "Ken&Miki Wedding"}
     },

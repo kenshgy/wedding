@@ -9,6 +9,10 @@ const props = defineProps({
   schedule: {
     type: Array<Schedule>,
     required: true
+  },
+  location: {
+    type: String,
+    required: true
   }
 })
 
@@ -36,7 +40,7 @@ onUnmounted(() => {
   </Transition>
   <Transition>
     <div v-if="showLetter">
-      <invitation-contents :schedule="props.schedule" />
+      <invitation-contents :schedule="props.schedule" :location="props.location" />
       <the-footer />
     </div>
   </Transition>
