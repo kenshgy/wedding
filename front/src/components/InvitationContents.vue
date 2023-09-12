@@ -21,6 +21,10 @@ const props = defineProps({
   schedule: {
     type: Array<Schedule>,
     required: true
+  },
+  location: {
+    type: String,
+    required: true
   }
 })
 </script>
@@ -40,7 +44,7 @@ const props = defineProps({
   <CarouselCard :image-list="middleImages" class="mt-4" />
   <ScheduleCard :schedule="props.schedule" />
   <v-card>
-    <LocationCard />
+    <LocationCard :location="props.location" />
     <FormCard />
   </v-card>
 </template>
