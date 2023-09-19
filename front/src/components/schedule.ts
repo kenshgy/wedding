@@ -46,9 +46,9 @@ export const reception: Schedule[] = [
     title: '来賓　ご来館',
     location: '明治記念館来賓控室',
     locationLink: 'https://www.meijikinenkan.gr.jp/wedding/access/',
-    time: '18時20分迄',
+    time: '18時20分まで',
     color: 'red-darken-1',
-    comment: 'ご来館いただいたあと、庭園にてご歓談の時間がございます'
+    comment: 'ご来館いただいたあと　庭園にてご歓談の時間がございます'
   },
   {
     title: '披露宴',
