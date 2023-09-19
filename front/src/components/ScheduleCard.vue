@@ -27,7 +27,10 @@ const props = defineProps({
             {{ item.title }}
             <a v-if="item.locationLink !== ''" :href="item.locationLink"> ＠{{ item.location }} </a>
             <br />
-            <p v-if="item.comment !== ''">{{ item.comment }}</p>
+            <!-- <p v-if="item.comment !== []">{{ item.comment }}</p> -->
+            <div v-for="(comment, i) in item.comment" :key="i">
+              <p>{{ comment }}</p>
+            </div>
           </div>
         </div>
       </v-timeline-item>
