@@ -116,6 +116,14 @@ export const koheiSchedule: Schedule[] = [
     time: '18時50分',
     color: 'blue-darken-4',
     comment: []
+  },  
+  {
+    title: 'こうへいスピーチ',
+    location: '明治記念館 芙蓉の間',
+    locationLink: 'https://www.meijikinenkan.gr.jp/wedding/banquet/fuyou.html',
+    time: '20時30分',
+    color: 'blue-darken-4',
+    comment: []
   },
   {
     title: 'お開き',
