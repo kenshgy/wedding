@@ -7,8 +7,7 @@ import { RouterView } from 'vue-router'
     <v-main
       :class="{
         'home-page': $route.path === '/',
-        'invitation-page': $route.path === '/invitation',
-        'invite-page': $route.path === '/invite'
+        'invitation-page': $route.path !== '/'
       }"
     >
       <v-container>
@@ -39,11 +38,6 @@ import { RouterView } from 'vue-router'
 }
 
 .invitation-page {
-  background: url('@/assets/pink.jpg');
-  background-size: cover;
-}
-
-.invite-page {
   background: url('@/assets/pink.jpg');
   background-size: cover;
 }
