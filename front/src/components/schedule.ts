@@ -116,6 +116,14 @@ export const koheiSchedule: Schedule[] = [
     time: '18時50分',
     color: 'blue-darken-4',
     comment: []
+  },  
+  {
+    title: 'こうへいスピーチ',
+    location: '',
+    locationLink: '',
+    time: '20時30分',
+    color: 'blue-darken-4',
+    comment: []
   },
   {
     title: 'お開き',
