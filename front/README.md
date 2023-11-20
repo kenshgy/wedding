@@ -69,3 +69,7 @@ npm run test:e2e -- --debug
 ```sh
 npm run lint
 ```
+
+
+AWSの設定は[こちら](https://qiita.com/ushi_osushi/items/a32d7b710567c2313faa)を参照
+CloudFrontのキャッシュクリアについては[こちら](https://zenn.dev/wakkunn/articles/66a6e8372611dc#%E7%95%AA%E5%A4%96%E7%B7%A8)
