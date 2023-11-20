@@ -13,7 +13,6 @@
 </template>
 
 <script setup lang="ts">
-import { v4 as uuid } from 'uuid'
 import { ref } from 'vue'
 import axios from 'axios'
 import fileUpload from '@/services/file-upload'
