@@ -2,7 +2,8 @@
 # The workflow Creates static website using aws s3
 name: ci
 on:
-  push:
+  pull_request:
+    branches: ["**"]
 # permission can be added at job level or workflow level
 permissions:
   contents: read # This is required for actions/checkout
