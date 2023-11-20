@@ -5,6 +5,8 @@ on:
   push:
     tags:
       - front*
+    branches:
+      - main
 env:
   BUCKET_NAME: "kenmiki.com"
   AWS_REGION: "ap-northeast-1"
