@@ -17,7 +17,6 @@
       "@nuxt/types",
       "@nuxtjs/axios",
       "@types/google.maps",
-    ],
-    "esModuleInterop": true
+    ]
   }
 }
