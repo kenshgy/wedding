@@ -11,9 +11,7 @@ import getPhotoListApi from '@/services/get-photoList'
 import { onMounted } from 'vue'
 
 const start = ''
-let imageList = ref([{ presignedUrl: String }])
-// const rowCount = ref(0)
-// const colCount = ref(0)
+let imageList = ref<{ name: string }[]>([])
 
 async function getPhotoList(startAfter: string) {
   const response = await getPhotoListApi.get(startAfter)
