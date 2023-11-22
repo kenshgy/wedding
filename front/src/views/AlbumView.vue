@@ -1,11 +1,13 @@
 <template>
-  <div v-for="(item, index) in imageList" :key="index">
-    <v-img
-      :src="`https://kenmiki-wedding-photo.s3.amazonaws.com/` + item"
-      max-height="150"
-      max-width="250"
-    />
-  </div>
+  <v-row>
+    <v-col v-for="j in imageList" :key="j" cols="3">
+      <v-img
+        :src="`https://kenmiki-wedding-photo.s3.amazonaws.com/` + j"
+        max-width="400"
+        class="mb-4 mx-2"
+      />
+    </v-col>
+  </v-row>
 </template>
 <script setup lang="ts">
 import { ref } from 'vue'
@@ -20,7 +22,7 @@ let imageList = ref([{ presignedUrl: String }])
 async function getPhotoList(startAfter: string) {
   const response = await getPhotoListApi.get(startAfter)
   const result = response.map((item: { name: string }) => item.name)
-  const combinedList = new Set([...imageList.value, ...result])
+  const combinedList = new Set([...result, ...imageList.value])
   imageList.value = Array.from(combinedList)
   return result
 }
