@@ -1,8 +1,8 @@
 import http from "../http-common";
 
 class GetSignedUrl {
-  async get(fileName: string) {
-    const result = await http.get("/api/files/signedUrl?fileName=" + fileName);
+  async get(fileType: string) {
+    const result = await http.get("https://auzjl6sk33.execute-api.ap-northeast-1.amazonaws.com/default/createUrl?fileType=" + fileType);
     console.log(result)
     return result.data;
   }
