@@ -1,11 +1,7 @@
 <template>
   <v-row>
     <v-col v-for="j in imageList" :key="j" cols="12" md="3">
-      <v-img
-        :src="`https://kenmiki-wedding-photo.s3.amazonaws.com/` + j"
-        max-width="400"
-        class="mb-4 mx-2"
-      />
+      <v-img :src="`https://kenmiki-wedding-photo.s3.amazonaws.com/` + j" class="mb-4 mx-2" />
     </v-col>
   </v-row>
 </template>
