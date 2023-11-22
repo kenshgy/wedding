@@ -1,14 +1,18 @@
 <template>
-  <div>
+  <div v-if="!uploadSuccess">
     <input type="file" @change="handleFileUpload" />
-    <button @click="uploadFile">写真をアップロード</button>
-    {{ selectedFile?.name }}
+    <v-btn v-if="selectedFile" @click="uploadFile">写真をアップロード</v-btn>
+    <!-- {{ selectedFile?.name }} -->
     <img
       :src="(imagePreview as string)"
       v-if="imagePreview"
       style="max-width: 300px; margin-top: 20px"
       alt="Preview"
     />
+  </div>
+  <div v-else>
+    <p>アップロードできました</p>
+    <v-btn @click="reset">別の写真をアップする</v-btn>
   </div>
 </template>
 
@@ -19,6 +23,7 @@ import putS3 from '@/services/put-s3'
 
 const selectedFile = ref<File | null>(null)
 const imagePreview = ref<string | ArrayBuffer | null>('')
+const uploadSuccess = ref(false)
 
 // ファイル選択時の処理
 function handleFileUpload(event: Event) {
@@ -26,6 +31,7 @@ function handleFileUpload(event: Event) {
   if (target.files && target.files.length > 0) {
     selectedFile.value = target.files[0]
     const reader = new FileReader()
+    console.log(selectedFile.value?.type)
 
     reader.onload = () => {
       // ファイルの読み込みが完了したら、プレビューを表示する
@@ -37,16 +43,11 @@ function handleFileUpload(event: Event) {
 }
 
 async function createPresignedUrlWithClient() {
-  return await getSignedUrl.get(selectedFile.value?.name as string)
+  const fileType = selectedFile.value?.type
+  return await getSignedUrl.get(fileType as string)
 }
 
 async function put(url: string | URL, data: any) {
-  // const uploadResponse = axios.put(url as string, data, {
-  //   headers: {
-  //     'Content-Type': data.type
-  //   }
-  // })
-  // await uploadResponse
   await putS3.put(url, data)
 }
 
@@ -55,11 +56,17 @@ async function uploadFile() {
     const response = await createPresignedUrlWithClient()
 
     console.log('Calling PUT using presigned URL with client')
-    await put(response.url, selectedFile.value?.stream)
-
+    await put(response.uploadURL, selectedFile.value)
+    uploadSuccess.value = true
     console.log('\nDone. Check your S3 console.')
   } catch (err) {
     console.error(err)
   }
+}
+
+function reset() {
+  uploadSuccess.value = false
+  selectedFile.value = null
+  imagePreview.value = null
 }
 </script>
