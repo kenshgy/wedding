@@ -1,18 +1,34 @@
 <template>
   <div v-if="!uploadSuccess">
-    <input type="file" @change="handleFileUpload" />
-    <v-btn v-if="selectedFile" @click="uploadFile">写真をアップロード</v-btn>
-    <!-- {{ selectedFile?.name }} -->
-    <img
-      :src="(imagePreview as string)"
-      v-if="imagePreview"
-      style="max-width: 300px; margin-top: 20px"
-      alt="Preview"
-    />
+    <v-row>
+      <v-col>
+        <p>撮影した写真をアップロードしてね！</p>
+        <p>アップロードした写真はモニターに映ります！</p>
+
+        <input type="file" @change="handleFileUpload" />
+      </v-col>
+    </v-row>
+
+    <v-row>
+      <v-col>
+        <v-btn v-if="selectedFile" @click="uploadFile">写真をアップロード</v-btn>
+        <img
+          :src="(imagePreview as string)"
+          v-if="imagePreview"
+          style="max-width: 300px; margin-top: 20px"
+          alt="Preview"
+        />
+      </v-col>
+    </v-row>
   </div>
   <div v-else>
-    <p>アップロードできました</p>
+    <p>アップロードできました!</p>
     <v-btn @click="reset">別の写真をアップする</v-btn>
+    <p>
+      アップロードした写真は
+      <a href="/album">ここ</a>
+      からも見れるよ！
+    </p>
   </div>
 </template>
 
