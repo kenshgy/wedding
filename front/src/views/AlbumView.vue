@@ -1,6 +1,6 @@
 <template>
   <v-row>
-    <v-col v-for="j in imageList" :key="j" cols="12" md="3">
+    <v-col v-for="j in imageList" :key="j" cols="12" md="4">
       <v-img :src="`https://kenmiki-wedding-photo.s3.amazonaws.com/` + j" class="mb-4 mx-2" />
     </v-col>
   </v-row>
