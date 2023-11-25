@@ -2,8 +2,9 @@
   <div v-if="!uploadSuccess">
     <v-row>
       <v-col>
-        <p>撮影した写真をアップロードしてください！</p>
-        <p>アップロードした写真はモニターに映ります！</p>
+        <p>皆さんに結婚式を楽しんでもらいたいと思い 写真を共有するアプリを2人で作成しました!</p>
+        <p>写真をアップロードするとモニターに映るので写真を撮ってアップロードしてみてください</p>
+        <p>皆さんに楽しんでいただけると幸いです</p>
 
         <input type="file" @change="handleFileUpload" />
       </v-col>
@@ -11,7 +12,7 @@
 
     <v-row>
       <v-col>
-        <v-btn v-if="selectedFile" @click="uploadFile">写真をアップロード</v-btn>
+        <v-btn v-if="selectedFile" @click="uploadFile">選択した写真をアップロードする</v-btn>
         <img
           :src="(imagePreview as string)"
           v-if="imagePreview"
@@ -24,7 +25,7 @@
   <div v-else>
     <v-row>
       <v-col>
-        <p>アップロードできました!</p>
+        <p>ありがとうございます♡ アップロードできました!</p>
         <v-btn @click="reset">別の写真をアップする</v-btn>
       </v-col>
     </v-row>
@@ -33,8 +34,8 @@
       <v-col>
         <p>
           アップロードした写真は
-          <a href="https://kenmiki.com/album">ここ</a>
-          からも見れます！
+          <a href="https://kenmiki.com/album">ここから</a>
+          スマホでも見れます！
         </p>
       </v-col>
     </v-row>
