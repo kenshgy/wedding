@@ -1,20 +1,14 @@
 <template>
   <div v-if="!uploadSuccess">
-    <v-row>
-      <v-col>
-        <p>皆さんに結婚式を楽しんでもらいたいと思い 写真を共有するアプリを2人で作成しました!</p>
-        <p>写真をアップロードするとモニターに映るので写真を撮ってアップロードしてみてください</p>
-        <p>皆さんに楽しんでいただけると幸いです</p>
-        <p>動画は非対応です！</p>
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col>
-        <input type="file" @change="handleFileUpload" />
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col>
+    <v-card class="pa-4">
+      <p>皆さんに結婚式を楽しんでもらいたいと思い 写真を共有するアプリを2人で作成しました!</p>
+      <p>写真をアップロードするとモニターに映るので写真を撮ってアップロードしてみてください</p>
+      <p>皆さんに楽しんでいただけると幸いです</p>
+      <p>動画は非対応です！</p>
+      <input class="ma-4" type="file" @change="handleFileUpload" />
+    </v-card>
+    <v-row class="ma-4" justify="center">
+      <v-col cols="auto">
         <img
           :src="(imagePreview as string)"
           v-if="imagePreview"
@@ -23,29 +17,26 @@
         />
       </v-col>
     </v-row>
-    <v-row>
-      <v-col>
-        <v-btn v-if="selectedFile" @click="uploadFile">選択した写真をアップロードする</v-btn>
+    <v-row justify="center">
+      <v-col cols="auto">
+        <v-btn v-if="selectedFile" @click="uploadFile" color="pink">
+          <v-icon start icon="mdi-send"></v-icon>
+          選択した写真をアップロードする
+        </v-btn>
       </v-col>
     </v-row>
   </div>
   <div v-else>
-    <v-row>
-      <v-col>
-        <p>ありがとうございます♡ アップロードできました!</p>
-        <v-btn @click="reset">別の写真をアップする</v-btn>
-      </v-col>
-    </v-row>
+    <v-card class="pa-4">
+      <p class="">ありがとうございます♡ アップロードできました!</p>
+      <v-btn class="mt-4" @click="reset" color="pink">別の写真をアップする</v-btn>
 
-    <v-row>
-      <v-col>
-        <p>
-          アップロードした写真は
-          <a href="https://kenmiki.com/album">ここから</a>
-          スマホでも見れます！
-        </p>
-      </v-col>
-    </v-row>
+      <p class="pt-4">
+        アップロードした写真は
+        <a href="https://kenmiki.com/album">こちらから</a>
+        スマホでも見れます！
+      </p>
+    </v-card>
   </div>
 </template>
 
@@ -53,7 +44,6 @@
 import { ref } from 'vue'
 import getSignedUrl from '@/services/get-signedUrl'
 import putS3 from '@/services/put-s3'
-import router from '@/router'
 
 const selectedFile = ref<File | null>(null)
 const imagePreview = ref<string | ArrayBuffer | null>('')

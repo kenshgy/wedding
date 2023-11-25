@@ -1,16 +1,27 @@
 <template>
   <v-row class="d-md-none" justify="end">
     <v-col>
-      <v-btn @click="() => router.push('/upload')">戻る</v-btn>
+      <v-btn @click="() => router.push('/upload')">
+        <v-icon start icon="mdi-arrow-left"></v-icon>
+        Back
+      </v-btn>
     </v-col>
   </v-row>
   <v-row>
-    <v-col v-for="j in imageList" :key="j" cols="12" md="4" align-self="center">
+    <v-col v-for="j in imageList" :key="j" cols="12" :md="colCount" align-self="center">
       <v-img
         :src="`https://kenmiki-wedding-photo.s3.amazonaws.com/` + j.name"
         class="mb-4 mx-2"
         :alt="j.name"
       />
+    </v-col>
+  </v-row>
+  <v-row class="d-md-block">
+    <v-col>
+      <v-btn @click="show3Piece">横に3つ表示する</v-btn>
+    </v-col>
+    <v-col>
+      <v-btn @click="show2Piece">横に2つ表示する</v-btn>
     </v-col>
   </v-row>
 </template>
@@ -19,6 +30,14 @@ import { ref } from 'vue'
 import getPhotoListApi from '@/services/get-photoList'
 import { onMounted } from 'vue'
 import router from '@/router'
+
+const colCount = ref(4)
+function show3Piece() {
+  colCount.value = 4
+}
+function show2Piece() {
+  colCount.value = 6
+}
 
 const start = ''
 interface PhotoInfo {
