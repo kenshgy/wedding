@@ -2,7 +2,7 @@
   <div v-if="!uploadSuccess">
     <v-row>
       <v-col>
-        <p>撮影した写真をアップロードしてね！</p>
+        <p>撮影した写真をアップロードしてください！</p>
         <p>アップロードした写真はモニターに映ります！</p>
 
         <input type="file" @change="handleFileUpload" />
@@ -22,13 +22,22 @@
     </v-row>
   </div>
   <div v-else>
-    <p>アップロードできました!</p>
-    <v-btn @click="reset">別の写真をアップする</v-btn>
-    <p>
-      アップロードした写真は
-      <a href="/album">ここ</a>
-      からも見れるよ！
-    </p>
+    <v-row>
+      <v-col>
+        <p>アップロードできました!</p>
+        <v-btn @click="reset">別の写真をアップする</v-btn>
+      </v-col>
+    </v-row>
+
+    <v-row>
+      <v-col>
+        <p>
+          アップロードした写真は
+          <a href="https://kenmiki.com/album">ここ</a>
+          からも見れます！
+        </p>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
@@ -36,6 +45,7 @@
 import { ref } from 'vue'
 import getSignedUrl from '@/services/get-signedUrl'
 import putS3 from '@/services/put-s3'
+import router from '@/router'
 
 const selectedFile = ref<File | null>(null)
 const imagePreview = ref<string | ArrayBuffer | null>('')
