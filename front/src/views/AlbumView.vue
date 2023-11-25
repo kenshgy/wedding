@@ -1,7 +1,7 @@
 <template>
   <v-row>
-    <v-col v-for="j in imageList" :key="j" cols="12" md="4">
-      <v-img :src="`https://kenmiki-wedding-photo.s3.amazonaws.com/` + j" class="mb-4 mx-2" />
+    <v-col v-for="j in imageList" :key="j" cols="12" md="6">
+      <v-img :src="`https://kenmiki-wedding-photo.s3.amazonaws.com/` + j.name" class="mb-4 mx-2" />
     </v-col>
   </v-row>
 </template>
@@ -11,15 +11,39 @@ import getPhotoListApi from '@/services/get-photoList'
 import { onMounted } from 'vue'
 
 const start = ''
-let imageList = ref<{ name: string }[]>([])
+interface PhotoInfo {
+  name: string
+  size: string
+  lastModified: string
+  presignedUrl: string
+}
+let imageList = ref<PhotoInfo[]>([])
+
+function parseDate(dateString: string) {
+  const [year, month, day, hour, minute, second] = dateString.split(/\/|:|\s/).map(Number)
+  return new Date(year, month - 1, day, hour, minute, second)
+}
 
 async function getPhotoList(startAfter: string) {
-  const response = await getPhotoListApi.get(startAfter)
-  const result = response.map((item: { name: string }) => item.name)
-  const combinedList = new Set([...result, ...imageList.value])
-  imageList.value = Array.from(combinedList)
-  return result
+  const response: PhotoInfo[] = await getPhotoListApi.get(startAfter)
+  response.sort((a, b) => {
+    const dateA = parseDate(a.lastModified)
+    const dateB = parseDate(b.lastModified)
+    return dateB.getTime() - dateA.getTime()
+  })
+
+  const lastStoredTimestamp =
+    imageList.value.length > 0 ? new Date(imageList.value[0].lastModified).getTime() : 0
+
+  const newPhotos = response.filter((photo) => {
+    const photoTimestamp = new Date(photo.lastModified).getTime()
+    return photoTimestamp > lastStoredTimestamp
+  })
+
+  imageList.value.unshift(...newPhotos)
+  return newPhotos
 }
+
 onMounted(async () => {
   imageList.value = await getPhotoList(start)
   setInterval(async () => {
