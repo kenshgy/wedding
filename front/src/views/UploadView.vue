@@ -5,20 +5,27 @@
         <p>皆さんに結婚式を楽しんでもらいたいと思い 写真を共有するアプリを2人で作成しました!</p>
         <p>写真をアップロードするとモニターに映るので写真を撮ってアップロードしてみてください</p>
         <p>皆さんに楽しんでいただけると幸いです</p>
-
+        <p>動画は非対応です！</p>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col>
         <input type="file" @change="handleFileUpload" />
       </v-col>
     </v-row>
-
     <v-row>
       <v-col>
-        <v-btn v-if="selectedFile" @click="uploadFile">選択した写真をアップロードする</v-btn>
         <img
           :src="(imagePreview as string)"
           v-if="imagePreview"
           style="max-width: 300px; margin-top: 20px"
           alt="Preview"
         />
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col>
+        <v-btn v-if="selectedFile" @click="uploadFile">選択した写真をアップロードする</v-btn>
       </v-col>
     </v-row>
   </div>
