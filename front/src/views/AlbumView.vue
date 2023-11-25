@@ -1,7 +1,16 @@
 <template>
+  <v-row class="d-md-none" justify="end">
+    <v-col>
+      <v-btn @click="() => router.push('/upload')">戻る</v-btn>
+    </v-col>
+  </v-row>
   <v-row>
-    <v-col v-for="j in imageList" :key="j" cols="12" md="6">
-      <v-img :src="`https://kenmiki-wedding-photo.s3.amazonaws.com/` + j.name" class="mb-4 mx-2" />
+    <v-col v-for="j in imageList" :key="j" cols="12" md="4" align-self="center">
+      <v-img
+        :src="`https://kenmiki-wedding-photo.s3.amazonaws.com/` + j.name"
+        class="mb-4 mx-2"
+        :alt="j.name"
+      />
     </v-col>
   </v-row>
 </template>
@@ -9,6 +18,7 @@
 import { ref } from 'vue'
 import getPhotoListApi from '@/services/get-photoList'
 import { onMounted } from 'vue'
+import router from '@/router'
 
 const start = ''
 interface PhotoInfo {

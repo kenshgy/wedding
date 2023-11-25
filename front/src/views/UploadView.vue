@@ -2,16 +2,19 @@
   <div v-if="!uploadSuccess">
     <v-row>
       <v-col>
-        <p>撮影した写真をアップロードしてね！</p>
-        <p>アップロードした写真はモニターに映ります！</p>
-
+        <p>皆さんに結婚式を楽しんでもらいたいと思い 写真を共有するアプリを2人で作成しました!</p>
+        <p>写真をアップロードするとモニターに映るので写真を撮ってアップロードしてみてください</p>
+        <p>皆さんに楽しんでいただけると幸いです</p>
+        <p>動画は非対応です！</p>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col>
         <input type="file" @change="handleFileUpload" />
       </v-col>
     </v-row>
-
     <v-row>
       <v-col>
-        <v-btn v-if="selectedFile" @click="uploadFile">写真をアップロード</v-btn>
         <img
           :src="(imagePreview as string)"
           v-if="imagePreview"
@@ -20,15 +23,29 @@
         />
       </v-col>
     </v-row>
+    <v-row>
+      <v-col>
+        <v-btn v-if="selectedFile" @click="uploadFile">選択した写真をアップロードする</v-btn>
+      </v-col>
+    </v-row>
   </div>
   <div v-else>
-    <p>アップロードできました!</p>
-    <v-btn @click="reset">別の写真をアップする</v-btn>
-    <p>
-      アップロードした写真は
-      <a href="/album">ここ</a>
-      からも見れるよ！
-    </p>
+    <v-row>
+      <v-col>
+        <p>ありがとうございます♡ アップロードできました!</p>
+        <v-btn @click="reset">別の写真をアップする</v-btn>
+      </v-col>
+    </v-row>
+
+    <v-row>
+      <v-col>
+        <p>
+          アップロードした写真は
+          <a href="https://kenmiki.com/album">ここから</a>
+          スマホでも見れます！
+        </p>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
@@ -36,6 +53,7 @@
 import { ref } from 'vue'
 import getSignedUrl from '@/services/get-signedUrl'
 import putS3 from '@/services/put-s3'
+import router from '@/router'
 
 const selectedFile = ref<File | null>(null)
 const imagePreview = ref<string | ArrayBuffer | null>('')
