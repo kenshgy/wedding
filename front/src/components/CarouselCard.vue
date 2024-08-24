@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useDisplay } from 'vuetify/lib/framework.mjs'
+import { useDisplay } from 'vuetify'
 import img1 from '@/assets/koma01.jpg'
 import img2 from '@/assets/koma02.jpg'
 import img3 from '@/assets/koma03.jpg'
