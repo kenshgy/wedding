@@ -1,13 +1,15 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
+import { RouterView, useRoute } from 'vue-router'
+
+const route = useRoute()
 </script>
 
 <template>
   <v-app>
     <v-main
       :class="{
-        'home-page': $route.path === '/',
-        'invitation-page': $route.path !== '/'
+        'home-page': route.path === '/',
+        'invitation-page': route.path !== '/'
       }"
     >
       <v-container>
