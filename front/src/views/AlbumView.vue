@@ -8,7 +8,13 @@
     </v-col>
   </v-row>
   <v-row>
-    <v-col v-for="j in imageList" :key="j" cols="12" :md="colCount" align-self="center">
+    <v-col
+      v-for="(j, index) in imageList"
+      :key="index"
+      cols="12"
+      :md="colCount"
+      align-self="center"
+    >
       <v-img
         :src="`https://kenmiki-wedding-photo.s3.amazonaws.com/` + j.name"
         class="mb-4 mx-2"
