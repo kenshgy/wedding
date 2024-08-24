@@ -5,14 +5,8 @@ import { reactive } from 'vue'
 const form = reactive({
   input: ''
 })
-const friends = '0708'
-const com = 'ideal'
 async function submit() {
-  if (form.input === com) {
-    router.push('/invite')
-  } else if (form.input === friends) {
-    router.push('/invitation')
-  }
+  router.push(form.input)
 }
 </script>
 
@@ -20,7 +14,7 @@ async function submit() {
   <v-form @submit.prevent="">
     <v-text-field
       v-model="form.input"
-      label="Enter Password"
+      label="Enter path"
       persistent-hint
       variant="outlined"
       density="compact"
