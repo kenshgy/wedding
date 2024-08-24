@@ -7,7 +7,7 @@ import img3 from '@/assets/koma03.jpg'
 
 const props = defineProps({
   imageList: {
-    type: Array<String>,
+    type: Array<string>,
     default: [img1, img2, img3]
   }
 })
@@ -31,7 +31,7 @@ const height = computed(() => {
 })
 </script>
 <template>
-  <v-carousel :show-arrows="false" hide-delimiters cycle interval :height="height">
+  <v-carousel :show-arrows="false" hide-delimiters cycle :height="height">
     <v-carousel-item v-for="(img, i) in props.imageList" :key="i" :src="props.imageList[i]" cover>
     </v-carousel-item>
   </v-carousel>

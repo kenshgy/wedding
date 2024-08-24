@@ -43,8 +43,8 @@ const route = useRoute()
   background: url('@/assets/pink.jpg');
   background-size: cover;
   background-position: center;
-  width: 100vw;
-  height: 100vh;
+  /* width: 100vw; */
+  /* height: 100vh; */
 }
 
 .home-page {
