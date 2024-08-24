@@ -7,5 +7,6 @@ version: 2
 updates:
   - package-ecosystem: "npm" # See documentation for possible values
     directory: "/front/" # Location of package manifests
-    schedule:
-      interval: "weekly"
+    workflow_dispatch:
+    # schedule:
+    #   interval: "weekly"
