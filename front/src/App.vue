@@ -40,9 +40,16 @@ import { RouterView } from 'vue-router'
 .invitation-page {
   background: url('@/assets/pink.jpg');
   background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
 }
 
 .home-page {
   background: url('@/assets/flowerback.png');
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
 }
 </style>
