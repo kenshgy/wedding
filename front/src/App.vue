@@ -1,13 +1,15 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
+import { RouterView, useRoute } from 'vue-router'
+
+const route = useRoute()
 </script>
 
 <template>
   <v-app>
     <v-main
       :class="{
-        'home-page': $route.path === '/',
-        'invitation-page': $route.path !== '/'
+        'home-page': route.path === '/',
+        'invitation-page': route.path !== '/'
       }"
     >
       <v-container>
@@ -41,8 +43,8 @@ import { RouterView } from 'vue-router'
   background: url('@/assets/pink.jpg');
   background-size: cover;
   background-position: center;
-  width: 100vw;
-  height: 100vh;
+  /* width: 100vw; */
+  /* height: 100vh; */
 }
 
 .home-page {
