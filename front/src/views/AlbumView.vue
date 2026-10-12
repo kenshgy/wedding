@@ -7,11 +7,14 @@
       :md="colCount"
       align-self="center"
     >
-      <v-img
-        :src="`/photos/` + encodeURIComponent(j.name)"
-        class="mb-4 mx-2"
-        :alt="j.name"
-      />
+      <!-- 一覧は縮小版を出し、押すと元の写真を開く -->
+      <a :href="`/photos/` + encodeURIComponent(j.name)" target="_blank" rel="noopener">
+        <v-img
+          :src="`/photos/` + encodeURIComponent(`thumbs/` + j.name)"
+          class="mb-4 mx-2"
+          :alt="j.name"
+        />
+      </a>
     </v-col>
   </v-row>
   <v-row class="d-md-block">

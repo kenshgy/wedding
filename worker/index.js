@@ -1,6 +1,8 @@
 // 招待状サイトの Worker。静的ファイル（front/dist）を配り、アルバムの写真を R2 から出す。
+// 一覧用の縮小版は同じバケットの thumbs/<元の名前> に置いてあり、一覧（/api/photos）には出さない。
 // kenmiki.com（apex）へのアクセスは wedding.kenmiki.com へ、どちらもトップ（/）は /invitation へ転送する。
 const SITE = "wedding.kenmiki.com";
+const THUMBS = "thumbs/";
 
 // AlbumView の parseDate が読む形（YYYY/MM/DD HH:MM:SS、日本時間）
 function formatDate(d) {
@@ -15,6 +17,7 @@ async function listPhotos(env) {
   do {
     const page = await env.PHOTOS.list({ cursor, limit: 1000 });
     for (const o of page.objects) {
+      if (o.key.startsWith(THUMBS)) continue;
       contents.push({ name: o.key, size: String(o.size), lastModified: formatDate(o.uploaded) });
     }
     cursor = page.truncated ? page.cursor : undefined;
