@@ -3,7 +3,6 @@ import InvitatioinView from '@/views/InvitatioinView.vue'
 import IndexView from "@/views/indexView.vue"
 import { reception, scheduleAll, koheiSchedule } from '@/components/schedule'
 import {LOCATION_CEREMONY, LOCATION_RECEPTION} from '@/components/locations'
-import UploadView from '@/views/UploadView.vue'
 import AlbumView from "@/views/AlbumView.vue"
 
 const router = createRouter({
@@ -34,12 +33,6 @@ const router = createRouter({
       name: 'kohei',
       props: {schedule: koheiSchedule, location: LOCATION_CEREMONY},
       component: InvitatioinView,
-      meta: {title: "Ken&Miki Wedding"}
-    },
-    {
-      path: '/upload',
-      name: 'upload',
-      component: UploadView,
       meta: {title: "Ken&Miki Wedding"}
     },
     {

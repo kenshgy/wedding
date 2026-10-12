@@ -1,0 +1,19 @@
+{
+  // 招待状サイト（wedding.kenmiki.com）。デプロイは README の「デプロイ」を参照
+  "name": "wedding",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-09-01",
+  "workers_dev": false,
+  "assets": {
+    "directory": "front/dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    // apex の転送と /api・/photos を先に Worker で受ける
+    "run_worker_first": true
+  },
+  "r2_buckets": [{ "binding": "PHOTOS", "bucket_name": "kenmiki-wedding-photo" }],
+  "routes": [
+    { "pattern": "wedding.kenmiki.com", "custom_domain": true },
+    { "pattern": "kenmiki.com", "custom_domain": true }
+  ]
+}

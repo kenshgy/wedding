@@ -1,12 +1,4 @@
 <template>
-  <v-row class="d-md-none" justify="end">
-    <v-col>
-      <v-btn @click="() => router.push('/upload')">
-        <v-icon start icon="mdi-arrow-left"></v-icon>
-        Back
-      </v-btn>
-    </v-col>
-  </v-row>
   <v-row>
     <v-col
       v-for="(j, index) in imageList"
@@ -16,7 +8,7 @@
       align-self="center"
     >
       <v-img
-        :src="`https://kenmiki-wedding-photo.s3.amazonaws.com/` + j.name"
+        :src="`/photos/` + encodeURIComponent(j.name)"
         class="mb-4 mx-2"
         :alt="j.name"
       />
@@ -35,7 +27,6 @@
 import { ref } from 'vue'
 import getPhotoListApi from '@/services/get-photoList'
 import { onMounted } from 'vue'
-import router from '@/router'
 
 const colCount = ref(4)
 function show3Piece() {

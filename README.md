@@ -22,14 +22,19 @@ npm run dev
 
 ## デプロイ
 
-デプロイ手順
-tagを作成する
-例
+Cloudflare Workers（静的アセット + R2）で配信する。2026-10-13 に AWS（S3 静的サイト・API Gateway）から移した。
+
+- サイト: https://wedding.kenmiki.com/ （誰でも見られる）
+- `https://kenmiki.com/` は Worker が `wedding.kenmiki.com` へ 301 で転送する
+- アルバム（`/album`）の写真は R2 バケット `kenmiki-wedding-photo`。Worker が `/api/photos`（一覧）と `/photos/<名前>`（画像）で出す
+- 写真のアップロード（`/upload`）は式が終わったので廃止した。写真を足すときは R2 に直接入れる（`npx wrangler r2 object put kenmiki-wedding-photo/<名前> --file <ファイル> --remote`）
+
 ```
-git tag front_20230709_01
-git push origin front_20230709_01
+cd front && npm ci && npm run build && cd ..
+CLOUDFLARE_API_TOKEN=... CLOUDFLARE_ACCOUNT_ID=... npx wrangler@4 deploy
 ```
 
+`backend/`（写真アップロード用の署名 URL を出す Lambda）は使っていない。
 
 # 参考サイト
 
