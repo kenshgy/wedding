@@ -1,5 +1,5 @@
 // 招待状サイトの Worker。静的ファイル（front/dist）を配り、アルバムの写真を R2 から出す。
-// kenmiki.com（apex）へのアクセスは wedding.kenmiki.com へ転送する。
+// kenmiki.com（apex）へのアクセスは wedding.kenmiki.com へ、どちらもトップ（/）は /invitation へ転送する。
 const SITE = "wedding.kenmiki.com";
 
 // AlbumView の parseDate が読む形（YYYY/MM/DD HH:MM:SS、日本時間）
@@ -35,6 +35,8 @@ async function getPhoto(env, key) {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    // トップ（/）は招待状を開く。入口を 1 つの URL にそろえるため、中身を出さずに転送する
+    if (url.pathname === "/") return Response.redirect(`https://${SITE}/invitation${url.search}`, 301);
     if (url.hostname !== SITE && url.hostname.endsWith("kenmiki.com")) {
       return Response.redirect(`https://${SITE}${url.pathname}${url.search}`, 301);
     }

@@ -25,7 +25,7 @@ npm run dev
 Cloudflare Workers（静的アセット + R2）で配信する。2026-10-13 に AWS（S3 静的サイト・API Gateway）から移した。
 
 - サイト: https://wedding.kenmiki.com/ （誰でも見られる）
-- `https://kenmiki.com/` は Worker が `wedding.kenmiki.com` へ 301 で転送する
+- `https://kenmiki.com/` と `https://wedding.kenmiki.com/` は Worker が `https://wedding.kenmiki.com/invitation` へ 301 で転送する（apex の他のパスは wedding の同じパスへ）
 - アルバム（`/album`）の写真は R2 バケット `kenmiki-wedding-photo`。Worker が `/api/photos`（一覧）と `/photos/<名前>`（画像）で出す
 - 写真のアップロード（`/upload`）は式が終わったので廃止した。写真を足すときは R2 に直接入れる（`npx wrangler r2 object put kenmiki-wedding-photo/<名前> --file <ファイル> --remote`）
 
